@@ -21,8 +21,7 @@
     #   Instalar dependencias
 """
 
-
-from calculator_class import SimpleCalculator   
+from calculator_class import SimpleCalculator
 
 if __name__ == "__main__":
     MENU = """
@@ -32,33 +31,30 @@ if __name__ == "__main__":
     4. Dividir
     5. Potencia
     6. Salir"""
-    
+    calculator = SimpleCalculator()
     option = int(input(MENU))
     while option != 6:
         if option == 1:
-            
             a = float(input("Add first number of the sum:"))
             b = float(input("Add second number of the sum: "))
-            print(f"result:{SimpleCalculator.suma(a,b)}")
+            print(f"result:{calculator.sum(a,b)}")
         elif option == 2:
             a = float(input("Add first number of the rest:"))
-            b = float(input("Add first number of the rest: "))
-            print(f"result:{SimpleCalculator.rest(a,b)}")
-            
+            b = float(input("Add second number of the rest: "))
+            print(f"result:{calculator.rest(a,b)}")
         elif option == 3:
             a = float(input("Add first number of the multiplication:"))
             b = float(input("Add first number of the multiplication: "))
-            print(f"result:{SimpleCalculator.multiplication(a,b)}")
+            print(f"result:{calculator.multiplication(a,b)}")
         elif option == 4:
             a = float(input("Add first number of the division:"))
             b = float(input("Add first number of the division: "))
-            print(f"result:{SimpleCalculator.division(a,b)}")
+            print(f"result:{calculator.division(a,b)}")
         elif option == 5:
             a = int(input("Add first number of the power:"))
             b = int(input("Add first number of the power: "))
-            print(f"result:{SimpleCalculator.power(a,b)}")
+            print(f"result:{calculator.power(a,b)}")
 
-        else: print("Please , choice a valid option")
+        else:
+            print("Please , choice a valid option")
         option = int(input(MENU))
-        
-    

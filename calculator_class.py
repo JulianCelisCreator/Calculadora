@@ -1,26 +1,38 @@
-"""" This module has class definition both abstract and concrete
-    for calculator
-    
-    Author: Julian David Celis Giraldo
-    This file is parte of PyCalculator - UD
-    
-    PyCalculator 
-    
+"""
+This module has class definition both abstract and concrete
+for calculators.
+
+Author: Julian David Celis Giraldo <jdcelisg@udistrital.edu.co>
+
+This file is part of PyCalculator-UD.
+
+PyCalculator-UD is free software: you can redistribute it and/or 
+modify it under the terms of the GNU General Public License as 
+published by the Free Software Foundation, either version 3 of 
+the License, or (at your option) any later version.
+
+PyCalculator-UD is distributed in the hope that it will be useful, 
+but WITHOUT ANY WARRANTY; without even the implied warranty of 
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU 
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License 
+along with PyCalculator-UD. If not, see <https://www.gnu.org/licenses/>. 
 """
 
 # Google Doc Python: Documentación python para cada método
 # Doc String
 from abc import ABC, abstractmethod
-import numpy as np  # Corregido: import numpy as np
 from datetime import datetime
+import numpy as np
 
 
 class AbstractCalculator(ABC):
     """ "
-    THis class represents the behavior of an abstract calculator.
+    This class represents the behavior of an abstract calculator.
     """
 
-    def suma(self, a: float, b: float) -> float:
+    def sum(self, a: float, b: float) -> float:
         """This methos sums two numerical values. #Resumen
         This methot takes two arguments, expected as numbers,
         and calculate and return the sum of those ones.
@@ -37,7 +49,8 @@ class AbstractCalculator(ABC):
     def rest(self, a: float, b: float) -> float:
         """This method applies substraction between two numbers
 
-        This method takes two numbers received as arguments and calculate the substraction in the given order.
+        This method takes two numbers received as arguments and
+        calculate the substraction in the given order.
 
         Args:
             a(float): first numert of the rest
@@ -52,7 +65,8 @@ class AbstractCalculator(ABC):
     def multiplication(self, a: float, b: float) -> float:
         """This method applies multiplication between two numbers
 
-        THis method takes two numbers received as arguments and calculate the substraction in the given order
+        THis method takes two numbers received as arguments
+        and calculate the substraction in the given order
 
         Args:
             a(float): first number of the multiplication
@@ -110,7 +124,7 @@ class SimpleCalculator(AbstractCalculator):
     def __init__(self):
         self.memory = 0
 
-    def division(a: float, b: float) -> float:
+    def division(self, a: float, b: float) -> float:
         """This method calculates the division between two numbers
 
         This method takes two numbers received as arguments and calculate the division using
@@ -134,7 +148,7 @@ class SimpleCalculator(AbstractCalculator):
             result = np.nan  # Not a number
         return result
 
-    def power(base: int, exponent: int) -> int:
+    def power(self, base: int, exponent: int) -> int:
         """This is an abstract method for power calculation
 
         In this method the power is calculated using a loop
@@ -151,7 +165,7 @@ class SimpleCalculator(AbstractCalculator):
             result = 1
         else:
             temp = 1
-            for i in range(exponent + 1):
+            for _i in range(exponent + 1):
                 temp *= base
             result = temp
         return result
