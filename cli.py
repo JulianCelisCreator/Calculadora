@@ -38,7 +38,7 @@ if __name__ == "__main__":
         if option == 1:
             
             a = float(input("Add first number of the sum:"))
-            b = float(input("Add first number of the sum: "))
+            b = float(input("Add second number of the sum: "))
             print(f"result:{SimpleCalculator.suma(a,b)}")
         elif option == 2:
             a = float(input("Add first number of the rest:"))
